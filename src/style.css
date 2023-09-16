@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
 /* Reset styles */
 html,
 body,
@@ -28,6 +31,9 @@ body {
   background-color: var(--primary-bg);
   color: var(--primary);
 }
+header, h1, #landing{
+  font-family: 'DM Serif Display', serif
+}
 header {
   padding: 5vw;
   position: sticky;
@@ -44,6 +50,7 @@ header {
 section {
   padding-inline: 10vw;
   min-height: 100svh;
+  font-family: 'Open Sans', sans-serif;
 }
 nav ul {
   list-style: none;
