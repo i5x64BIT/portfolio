@@ -1,0 +1,134 @@
+/* Reset styles */
+html,
+body,
+p,
+ul,
+li,
+div,
+img,
+section,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 14px;
+  --primary: lightgray;
+  --primary-bg: #282a3a;
+  --about-bg: #735f32;
+  --projects-bg: #c69749;
+  --contact-bg: #182747;
+}
+
+/* Layout */
+body {
+  background-color: var(--primary-bg);
+  color: var(--primary);
+}
+header {
+  padding: 5vw;
+  position: sticky;
+  top: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.3) 25%,
+    rgba(0, 0, 0, 0.3) 75%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  z-index: 1;
+}
+section {
+  padding-inline: 10vw;
+  min-height: 100svh;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  max-width: 25em;
+  font-size: calc(1.1em + 0.2vw);
+}
+nav a {
+  text-decoration: none;
+  color: var(--primary);
+}
+#landing {
+  position: relative;
+}
+#landing > h1{
+  padding-top: 25vh;
+  font-size: calc(.2em + 8vw);
+  position: relative;
+}
+
+#landing .cube {
+  position: absolute;
+  bottom: 0;
+  min-height: 1em;
+  margin-left: .2em;
+  color: #c84b31;
+  transform-style: preserve-3d;
+  transition: 1s ease;
+  display: inline-block;
+}
+.cube > *{
+  display: inline;
+  background-color: var(--primary-bg);
+  width: 6em;
+}
+#landing .front{
+  position: absolute;
+  transform:translateZ(.5em);
+}
+#landing .top{
+  position: absolute;
+  transform: rotateX(90deg) translateZ(.5em);
+}
+#landing .bottom{
+  position: absolute;
+  transform: rotateX(-90deg) translateZ(.5em);
+}
+#landing .back{
+  position: absolute;
+  transform: translateZ(-.5em) rotateX(180deg);
+}
+.phone{
+  width: clamp(200px, 70vw, 350px);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+.phone img{
+  max-width: 100%;
+  background-image: url(/assets/images/todo.png);
+  background-size: contain;
+}
+#about {
+  background-color: var(--about-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 8em;
+}
+.personal-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+.profile{
+  max-width: 50vw;
+  border-radius: 50%;
+}
+#projects {
+  background-color: var(--projects-bg);
+}
+#contact {
+  background-color: var(--contact-bg);
+}

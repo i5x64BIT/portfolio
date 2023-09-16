@@ -4,22 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tomer Vainshtein - Web Developer</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
     <section id="landing">
-      <h1>I'm a <span>Developer</span></h1>
-      <img src="" alt="" class="phone" />
+      <h1 class="title">
+          <span>I'm a </span>
+          <span class="cube">
+            <div class="front">Developer</div>
+            <div class="bottom">Teacher</div>
+            <div class="back">Programmer</div>
+            <div class="top">Engineer</div>
+          </span>
+      </h1>
+      <div class="phone">
+        <img src="/assets/images/phone.png" alt="" />
+      </div>
     </section>
     <section id="about">
       <div class="personal-container">
-        <img src="" alt="" class="profile" />
+        <img src="/assets/images/profile.png" alt="" class="profile" />
         <p class="description">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae et,
           aliquid reprehenderit officia quod laboriosam doloribus quibusdam nisi
@@ -90,17 +104,17 @@
         <p>Beer Sheva, South District, Israel</p>
         <div class="links">
           <a href="#" class="linkedin">
-            <img src="" alt="LinkedIn Link">
+            <img src="" alt="LinkedIn Link" />
           </a>
           <a href="#" class="github">
-            <img src="" alt="GitHub Link">
+            <img src="" alt="GitHub Link" />
           </a>
         </div>
       </div>
       <div class="project-slideshow">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
       </div>
     </section>
   </body>
