@@ -18,3 +18,4 @@ document.addEventListener('scroll', e => {
   const phone = document.querySelector('.phone');
   phone.style.transform = `translate(-50%, calc(50% - ${(window.scrollY+10) * .3}px))`;
 })
+
