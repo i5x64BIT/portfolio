@@ -13,9 +13,23 @@ const callback = () => {
     t = setTimeout(callback, 3000);
 }
 
-let currentScroll = 0;
-document.addEventListener('scroll', e => {
+document.addEventListener('scroll',() => {
   const phone = document.querySelector('.phone');
-  phone.style.transform = `translate(-50%, calc(50% - ${(window.scrollY+10) * .3}px))`;
+  phone.style.transform = `translateY(calc(50% - ${(window.scrollY+10) * .3}px))`;
 })
 
+const checkTabs = () => {
+  const maxWidth = 1200;
+  const covers = document.querySelectorAll('.cover');
+  if(window.innerWidth > maxWidth){
+    covers.forEach(e => {
+      e.removeAttribute('tabindex');
+    })
+  } else{
+    covers.forEach(e => {
+      e.setAttribute('tabindex', -1)
+    })
+  }
+}
+checkTabs();
+window.addEventListener('resize', checkTabs);

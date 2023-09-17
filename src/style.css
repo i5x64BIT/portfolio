@@ -19,21 +19,20 @@ h3 {
 
 :root {
   font-size: 14px;
-  --primary: lightgray;
+  --primary: white;
   --primary-bg: #282a3a;
   --about-bg: #735f32;
   --projects-bg: #c69749;
   --contact-bg: #182747;
 }
 /* Utility */
-.icon{
+.icon {
   max-width: 32px;
   cursor: pointer;
   transition: linear 80ms;
-  position: relative;
 }
-.icon:hover{
-  opacity: .5;
+.icon:hover {
+  opacity: 0.5;
 }
 .card {
   background-color: white;
@@ -75,6 +74,9 @@ h1,
 #landing {
   font-family: "DM Serif Display", serif;
 }
+h2{
+  font-size: 1rem;
+}
 header {
   padding: 5vw;
   position: sticky;
@@ -87,6 +89,8 @@ header {
     rgba(0, 0, 0, 0.4) 100%
   );
   z-index: 10;
+  display: flex;
+  justify-content: center;
 }
 section {
   padding-inline: 10vw;
@@ -96,7 +100,6 @@ section {
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;
   gap: 2em;
   max-width: 25em;
   font-size: calc(1.1em + 0.2vw);
@@ -149,8 +152,8 @@ nav a {
   width: clamp(200px, 70vw, 350px);
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translate(50%, 50%);
+  right: 20%;
+  transform: translateY(50%);
 }
 .phone img {
   max-width: 100%;
@@ -172,6 +175,9 @@ nav a {
   align-items: center;
   gap: 2em;
 }
+.personal-container > img {
+  max-width: 100%;
+}
 .stack-container {
   max-width: 100%;
   text-align: center;
@@ -179,6 +185,7 @@ nav a {
   font-size: 0.8rem;
 }
 .carousel {
+  margin-top: 1em;
   min-height: 10em;
   position: relative;
   overflow: hidden;
@@ -208,7 +215,7 @@ nav a {
   animation-play-state: paused;
 }
 .strip > * {
-  width: calc(55px + 0.5vw);
+  width: calc(55px + 3vw);
   margin-inline: 0.4em;
 }
 .profile {
@@ -220,7 +227,6 @@ nav a {
 }
 #projects h1 {
   grid-column: span 2;
-  font-size: 2rem;
   padding-bottom: 1em;
   text-align: center;
 }
@@ -272,7 +278,7 @@ nav a {
 #contact h1 {
   margin-top: 10vh;
 }
-.contact-options{
+.contact-options {
   position: relative;
   color: var(--contact-bg);
   background-color: white;
@@ -281,7 +287,7 @@ nav a {
   font-size: 1.3rem;
   text-align: center;
 }
-.contact-options::after{
+.contact-options::after {
   position: absolute;
   right: 0;
   content: "";
@@ -304,7 +310,7 @@ nav a {
   background-size: contain;
   max-width: 53%;
 }
-.project-slideshow > *:nth-child(1){
+.project-slideshow > *:nth-child(1) {
   top: 0;
   left: 0;
 }
@@ -334,4 +340,78 @@ nav a {
   100% {
     opacity: 0.3;
   }
+}
+
+@media screen and (min-width: 740px) {
+  :root {
+    font-size: 22px;
+  }
+  .phone {
+    right: 10vw;
+    transform: translate(0, 50%);
+  }
+}
+@media screen and (min-width: 1200px) {
+  h1{
+    font-size: 2.5rem;
+  }
+  header{
+    padding: 30px;
+  }
+  header ul{
+    gap: 7em;
+  }
+  #landing h1 {
+    font-size: 4rem;
+  }
+  #about .personal-container {
+    max-width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  .cover, .cover h2 {
+    background: none;
+    font-size: 1rem;
+    position: initial;
+    border: none;
+    font-size: 1.5rem;
+  }
+  .cover::after{
+    display: none;
+  }
+  .projects-item {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+  .projects-scroll{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+  #contact{
+    padding: 0;
+    position: relative;
+  }
+  .icon{
+    max-width: 65px;
+  }
+  #contact .links > *{
+    padding-inline: 10px;
+  }
+  .project-slideshow{
+    position: absolute;
+    width: 50vw;
+    right: -20vw;
+    bottom: 0;
+    transform: rotateZ(-50deg);
+  }
+}
+@media screen and (min-width: 2000px) {
+  .phone{
+    width: 20em;
+  }
+  :root{
+    font-size: 24px;
+  }
+
 }
