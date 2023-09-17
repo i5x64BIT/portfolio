@@ -26,7 +26,16 @@ h3 {
   --contact-bg: #182747;
 }
 /* Utility */
-.card{
+.icon{
+  max-width: 32px;
+  cursor: pointer;
+  transition: linear 80ms;
+  position: relative;
+}
+.icon:hover{
+  opacity: .5;
+}
+.card {
   background-color: white;
   color: #182747;
   border-radius: 10px;
@@ -37,23 +46,23 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: .7em;
+  gap: 0.7em;
 }
-.card .call-to-action::before{
+.card .call-to-action::before {
   content: "Check out";
 }
-.card .call-to-action{
+.card .call-to-action {
   background-color: var(--contact-bg);
   color: white;
   cursor: pointer;
   border-radius: inherit;
-  padding: .3em 1em;
+  padding: 0.3em 1em;
   margin-top: 1em;
   text-decoration: none;
   transition: 80ms ease-in-out;
 }
-.card .call-to-action:hover{
-  opacity: .6;
+.card .call-to-action:hover {
+  opacity: 0.6;
   text-decoration: underline;
 }
 /* Layout */
@@ -81,7 +90,7 @@ header {
 }
 section {
   padding-inline: 10vw;
-  min-height: 100svh;
+  min-height: 100dvh;
   font-family: "Open Sans", sans-serif;
 }
 nav ul {
@@ -141,6 +150,7 @@ nav a {
   position: absolute;
   bottom: 0;
   left: 50%;
+  transform: translate(50%, 50%);
 }
 .phone img {
   max-width: 100%;
@@ -218,17 +228,17 @@ nav a {
   padding-top: 6em;
   gap: 1em 1em;
 }
-.projects-item{
+.projects-item {
   position: relative;
 }
-.cover h2{
+.cover h2 {
   position: absolute;
   background-color: var(--about-bg);
   display: flex;
   align-items: center;
   justify-content: center;
   border-bottom: inset 2px white;
-  transition: .5s ease;
+  transition: 0.5s ease;
   width: 100%;
   height: 100%;
 }
@@ -238,21 +248,75 @@ nav a {
   overflow: scroll;
   gap: 1em;
 }
-.projects-item h2::after{
+.projects-item h2::after {
   content: "⬆";
   position: absolute;
   font-size: 1.1rem;
   right: 5%;
   animation: blink 1s ease-in infinite;
 }
-.projects-item h2:focus{
+.cover:focus h2 {
   font-size: 3rem;
   background-color: #182747;
-  transform: translateY(-65%) scale(.5);
+  transform: translateY(-65%) scale(0.5);
 }
 
 #contact {
   background-color: var(--contact-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  overflow: hidden;
+}
+#contact h1 {
+  margin-top: 10vh;
+}
+.contact-options{
+  position: relative;
+  color: var(--contact-bg);
+  background-color: white;
+  border-radius: 10px;
+  padding: 1em;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.contact-options::after{
+  position: absolute;
+  right: 0;
+  content: "";
+  background-color: white;
+  width: 15%;
+
+  aspect-ratio: 1/1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+.project-slideshow {
+  width: 100vw;
+  position: relative;
+  transform: translate(8rem, 13rem) rotateZ(-50deg);
+  min-height: 50vh;
+  overflow: hidden;
+}
+.project-slideshow > * {
+  position: absolute;
+  background-image: url(../assets/images/todo.png);
+  background-size: contain;
+  max-width: 53%;
+}
+.project-slideshow > *:nth-child(1){
+  top: 0;
+  left: 0;
+}
+.project-slideshow > *:nth-child(2) {
+  transform: rotateZ(20deg);
+  top: 15px;
+  left: 25px;
+}
+.project-slideshow > *:nth-child(3) {
+  top: 30px;
+  left: 50px;
+  transform: rotateZ(40deg);
 }
 
 @keyframes slide {
@@ -261,13 +325,13 @@ nav a {
   }
 }
 @keyframes blink {
-  0%{
-    opacity: .3;
+  0% {
+    opacity: 0.3;
   }
-  25%{
+  25% {
     opacity: 1;
   }
-  100%{
-    opacity: .3;
+  100% {
+    opacity: 0.3;
   }
 }
